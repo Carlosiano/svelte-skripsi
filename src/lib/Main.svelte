@@ -1,0 +1,428 @@
+<script lang="ts">
+import  {heroBg, heroBanner1, heroBanner2, heroShape2, aboutBanner, aboutShape1, aboutShape2, aboutShape3, aboutShape4, videoBg, videoBanner, videoShape1, videoShape2, blogBg, blogShape, arrowForwardOutline, checkmarkDoneOutline, play } from "../assets/images";
+import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/data";
+</script>
+
+<main>
+  <article>
+    <!-- 
+        - #HERO
+      -->
+
+    <section
+      class="section hero has-bg-image"
+      id="beranda"
+      aria-label="beranda"
+      style:background-image="url({heroBg})"
+    >
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="h1 section-title">
+            Masa depan <span class="span">cerah</span> Anda adalah misi kami
+          </h1>
+
+          <p class="hero-text">
+            Excepteur sint occaecat cupidatat non proident sunt in culpa qui
+            officia deserunt mollit.
+          </p>
+
+          <div style:display="flex" style:gap="1rem">
+            <a href={"#"} class="btn has-before">
+              <span class="span">Daftar Sekarang</span>
+            </a>
+
+            <a href={"#"} class="btn-second has-before">
+              <span class="span">Panduan PMB</span>
+
+
+        <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-banner">
+          <div class="img-holder one" style:--width="270" style:--height="300">
+            <img
+              src={heroBanner1}
+              width="270"
+              height="300"
+              alt="hero banner"
+              class="img-cover"
+            />
+          </div>
+
+          <div class="img-holder two" style:--width="240" style:--height="370">
+            <img
+              src={heroBanner2}
+              width="240"
+              height="370"
+              alt="hero banner"
+              class="img-cover"
+            />
+          </div>
+
+          <img
+            src={heroShape2}
+            width="622"
+            height="551"
+            alt=""
+            class="shape hero-shape-2"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- 
+        - #CATEGORY
+      -->
+
+    <section class="section category" id="jenjang" aria-label="category">
+      <div class="container">
+        <p class="section-subtitle">Pilihan Jenjang Pendidikan</p>
+
+        <h2 class="h2 section-title">
+          Fakultas Ilmu Komputer <span class="span">(FIK)</span>
+        </h2>
+
+        <p class="section-text">Program Sarjana (S1)</p>
+
+        <ul class="grid-list">
+          {#each categories[0] as item}
+            <li>
+              <div
+                class="category-card"
+                style:--color="{item.color[0]}, {item.color[1]}%, {item
+                  .color[2]}%"
+              >
+                <div class="card-icon">
+                  <img
+                    src={item.img}
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    alt={item.title}
+                    class="img"
+                  />
+                </div>
+
+                <h3 class="h3">
+                  <a href={"#"} class="card-title">{item.title}</a>
+                </h3>
+
+                <p class="card-text">{item.desc}</p>
+              </div>
+            </li>
+          {/each}
+        </ul>
+
+        <p class="section-text">Program Diploma (D3)</p>
+
+        <ul class="grid-list">
+          {#each categories[1] as item}
+            <li>
+              <div
+                class="category-card"
+                style:--color="{item.color[0]}, {item.color[1]}%, {item
+                  .color[2]}%"
+              >
+                <div class="card-icon">
+                  <img
+                    src={item.img}
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    alt={item.title}
+                    class="img"
+                  />
+                </div>
+
+                <h3 class="h3">
+                  <a href={"#"} class="card-title">{item.title}</a>
+                </h3>
+
+                <p class="card-text">{item.desc}</p>
+              </div>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 
+        - #ABOUT
+      -->
+
+    <section class="section about" id="why" aria-label="about">
+      <div class="container">
+        <figure class="about-banner">
+          <div class="img-holder" style:--width="520" style:--height="370">
+            <img
+              src={aboutBanner}
+              width="520"
+              height="370"
+              loading="lazy"
+              alt="about banner"
+              class="img-cover"
+            />
+          </div>
+
+          <img
+            src={aboutShape1}
+            width="360"
+            height="420"
+            loading="lazy"
+            alt=""
+            class="shape about-shape-1"
+          />
+
+          <img
+            src={aboutShape2}
+            width="371"
+            height="220"
+            loading="lazy"
+            alt=""
+            class="shape about-shape-2"
+          />
+
+          <img
+            src={aboutShape3}
+            width="722"
+            height="528"
+            loading="lazy"
+            alt=""
+            class="shape about-shape-3"
+          />
+        </figure>
+
+        <div class="about-content">
+          <p class="section-subtitle">Why?</p>
+
+          <h2 class="h2 section-title">
+            Alasan <span class="span">Mengapa</span> Kuliah di UTC?
+          </h2>
+
+          <p class="section-text"></p>
+
+          <ul class="about-list">
+            {#each alasanKuliah as item}
+                  <li class="about-item">
+                    <div
+                      class="ion-icon"
+                      style="mask-image: url({checkmarkDoneOutline})"
+                      aria-hidden="true"
+                    ></div>
+                    <span class="span">
+                      {item}
+                    </span>
+                  </li>
+            {/each}
+          </ul>
+
+          <img
+            src={aboutShape4}
+            width="100"
+            height="100"
+            loading="lazy"
+            alt=""
+            class="shape about-shape-4"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+        - #Fasilitas
+      -->
+
+    <section class="section course" id="fasilitas" aria-label="course">
+      <div class="container">
+        <p class="section-subtitle">Fasilitas Kampus</p>
+
+        <h2 class="h2 section-title">Nikmati fasilitas yang tersedia</h2>
+
+        <ul class="grid-list">
+          {#each Object.entries(fasilitas) as [index, item]}
+            <li>
+              <div class="course-card">
+                <figure
+                  class="card-banner img-holder"
+                  style:--width="370"
+                  style:--height="220"
+                >
+                  <img
+                    src={item.img}
+                    width="370"
+                    height="220"
+                    loading="lazy"
+                    alt="Build Responsive Real- World Websites with HTML and CSS"
+                    class="img-cover"
+                  />
+                </figure>
+                <div class="card-content">
+                  <span class="badge">{item.title}</span>
+
+                  <h3 class="h3">
+                    <a href={"#"} class="card-title-fasilitas">{item.desc}</a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+          {/each}
+        </ul>
+
+        <a href={"#"} class="btn has-before">
+          <span class="span">Lihat lebih banyak</span>
+
+              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 
+      INFO PMB
+        -->
+
+    <section class="section course" id="info" aria-label="course">
+      <div class="container">
+        <p class="section-subtitle">Info PMB</p>
+        <h2 class="h2 section-title">Informasi seputar PMB</h2>
+        <ul class="grid-list">
+          {#each infoPMB as item}
+            <li style:padding-top="100px">
+              <div class="blog-card">
+                <div class="card-content">
+                  <a href={"#"} class="card-btn" aria-label="read more">
+
+              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+                  </a>
+                  <h3 class="h3">
+                    <a href={"#"} class="card-title">
+                      {item}
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </li>
+          {/each}
+        </ul>
+        <a href={"#"} class="btn-second has-before">
+
+              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 
+        - #VIDEO
+      -->
+
+    <section
+      class="video has-bg-image"
+      aria-label="video"
+      style:background-image="url({videoBg})"
+    >
+      <div class="container">
+        <div class="video-card">
+          <div
+            class="video-banner img-holder has-after"
+            style:--width=" "
+            style:--height=" ">
+            <img
+              src={videoBanner}
+              width="970"
+              height="550"
+              loading="lazy"
+              alt="video banner"
+              class="img-cover"
+            />
+
+            <button class="play-btn" aria-label="play video">
+              <div class="ion-icon" style="mask-image: url({play});" aria-hidden="true"></div>
+            </button>
+          </div>
+
+          <img
+            src={videoShape1}
+            width="1089"
+            height="605"
+            loading="lazy"
+            alt=""
+            class="shape video-shape-1"
+          />
+
+          <img
+            src={videoShape2}
+            width="158"
+            height="174"
+            loading="lazy"
+            alt=""
+            class="shape video-shape-2"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+        - #BLOG
+      -->
+
+    <section
+      class="section blog has-bg-image"
+      id="blog"
+      aria-label="blog"
+      style:background-image="url({blogBg})"
+    >
+      <div class="container">
+        <p class="section-subtitle">Kampus</p>
+
+        <h2 class="h2 section-title">Cabang Kampus</h2>
+
+        <ul class="grid-list">
+          {#each Object.entries(kampus) as [index, item]}
+            <li>
+              <div class="blog-card">
+                <figure
+                  class="card-banner img-holder has-after"
+                  style:--width="370"
+                  style:--height="370"
+                >
+                  <img
+                    src={item.img}
+                    width="370"
+                    height="370"
+                    loading="lazy"
+                    alt="Become A Better Blogger: Content Planning"
+                    class="img-cover"
+                  />
+                </figure>
+
+                <div class="card-content">
+                  <a href={"#"} class="card-btn" aria-label="read more">
+
+              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+                  </a>
+
+                  <a href={"#"} class="card-subtitle">{item.title}</a>
+
+                  <h3 class="h3">
+                    <a href={"#"} class="card-title">{item.alamat}</a>
+                  </h3>
+                  <p class="card-text">{item.telp}</p>
+                </div>
+              </div>
+            </li>
+          {/each}
+        </ul>
+
+        <img
+          src={blogShape}
+          width="186"
+          height="186"
+          loading="lazy"
+          alt=""
+          class="shape blog-shape"
+        />
+      </div>
+    </section>
+  </article>
+</main>
