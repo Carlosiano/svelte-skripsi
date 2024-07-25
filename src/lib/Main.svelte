@@ -100,8 +100,7 @@
             <li>
               <div
                 class="category-card"
-                style:--color="{item.color[0]}, {item.color[1]}%, {item
-                  .color[2]}%"
+                style:--color="{item.color[0]}, {item.color[1]}%, {item.color[2]}%"
               >
                 <div class="card-icon">
                   <img

@@ -69,7 +69,7 @@ const categoriesInfos = [
 
 export const categories = categoriesInfos.map((data) =>
   categoriesImages.map((img, i) => ({
-    img,
+    img: img,
     title: data[i].title,
     desc: data[i].desc,
     color: data[i].color

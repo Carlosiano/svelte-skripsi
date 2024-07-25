@@ -52,7 +52,7 @@ export const fasilitasImages: string[] = Object.values(
 );
 
 // Categories images
-export const categoriesImages = Object.values(
+export const categoriesImages: string[] = Object.values(
   import.meta.glob("./category-*.{png,jpg,jpeg,PNG,JPEG,svg}", {
     import: 'default',
     eager: true,
