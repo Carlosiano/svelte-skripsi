@@ -1,6 +1,13 @@
 <script lang="ts">
-import  {heroBg, heroBanner1, heroBanner2, heroShape2, aboutBanner, aboutShape1, aboutShape2, aboutShape3, aboutShape4, videoBg, videoBanner, videoShape1, videoShape2, blogBg, blogShape, arrowForwardOutline, checkmarkDoneOutline, play } from "../assets/images";
-import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/data";
+  import { aboutBanner, aboutShape1, aboutShape2, aboutShape3, aboutShape4, arrowForwardOutline, blogBg, blogShape, checkmarkDoneOutline, heroBanner1, heroBanner2, heroShape2, play, videoBanner, videoBg, videoShape1, videoShape2 } from "../assets/images";
+  import {
+    categories,
+    fasilitas,
+    infoPMB,
+    kampus,
+    alasanKuliah,
+  } from "../assets/js/data";
+
 </script>
 
 <main>
@@ -13,7 +20,6 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
       class="section hero has-bg-image"
       id="beranda"
       aria-label="beranda"
-      style:background-image="url({heroBg})"
     >
       <div class="container">
         <div class="hero-content">
@@ -33,9 +39,12 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
 
             <a href={"#"} class="btn-second has-before">
               <span class="span">Panduan PMB</span>
-
-
-        <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+              <img
+                src={arrowForwardOutline}
+                alt=""
+                class="ion-icon"
+                aria-hidden="true"
+              />
             </a>
           </div>
         </div>
@@ -205,16 +214,17 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
 
           <ul class="about-list">
             {#each alasanKuliah as item}
-                  <li class="about-item">
-                    <div
-                      class="ion-icon"
-                      style="mask-image: url({checkmarkDoneOutline})"
-                      aria-hidden="true"
-                    ></div>
-                    <span class="span">
-                      {item}
-                    </span>
-                  </li>
+              <li class="about-item">
+                <img
+                  src={checkmarkDoneOutline}
+                  alt=""
+                  class="ion-icon"
+                  aria-hidden="true"
+                />
+                <span class="span">
+                  {item}
+                </span>
+              </li>
             {/each}
           </ul>
 
@@ -241,7 +251,7 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
         <h2 class="h2 section-title">Nikmati fasilitas yang tersedia</h2>
 
         <ul class="grid-list">
-          {#each Object.entries(fasilitas) as [index, item]}
+          {#each fasilitas as item}
             <li>
               <div class="course-card">
                 <figure
@@ -273,7 +283,12 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
         <a href={"#"} class="btn has-before">
           <span class="span">Lihat lebih banyak</span>
 
-              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+          <img
+            src={arrowForwardOutline}
+            alt=""
+            class="ion-icon"
+            aria-hidden="true"
+          />
         </a>
       </div>
     </section>
@@ -292,8 +307,12 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
               <div class="blog-card">
                 <div class="card-content">
                   <a href={"#"} class="card-btn" aria-label="read more">
-
-              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+                    <img
+                      src={arrowForwardOutline}
+                      alt=""
+                      class="ion-icon"
+                      aria-hidden="true"
+                    />
                   </a>
                   <h3 class="h3">
                     <a href={"#"} class="card-title">
@@ -306,8 +325,12 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
           {/each}
         </ul>
         <a href={"#"} class="btn-second has-before">
-
-              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+          <img
+            src={arrowForwardOutline}
+            alt=""
+            class="ion-icon"
+            aria-hidden="true"
+          />
         </a>
       </div>
     </section>
@@ -326,7 +349,8 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
           <div
             class="video-banner img-holder has-after"
             style:--width=" "
-            style:--height=" ">
+            style:--height=" "
+          >
             <img
               src={videoBanner}
               width="970"
@@ -337,7 +361,12 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
             />
 
             <button class="play-btn" aria-label="play video">
-              <div class="ion-icon" style="mask-image: url({play});" aria-hidden="true"></div>
+              <img
+                src={play}
+                alt=""
+                class="ion-icon"
+                aria-hidden="true"
+              />
             </button>
           </div>
 
@@ -378,7 +407,7 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
         <h2 class="h2 section-title">Cabang Kampus</h2>
 
         <ul class="grid-list">
-          {#each Object.entries(kampus) as [index, item]}
+          {#each kampus as item}
             <li>
               <div class="blog-card">
                 <figure
@@ -398,8 +427,12 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
 
                 <div class="card-content">
                   <a href={"#"} class="card-btn" aria-label="read more">
-
-              <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+                    <img
+                      src={arrowForwardOutline}
+                      alt=""
+                      class="ion-icon"
+                      aria-hidden="true"
+                    />
                   </a>
 
                   <a href={"#"} class="card-subtitle">{item.title}</a>
@@ -426,3 +459,9 @@ import {categories,fasilitas,infoPMB,kampus, alasanKuliah } from "../assets/js/d
     </section>
   </article>
 </main>
+
+<style>
+  .hero {
+    background-image: url("/src/assets/images/hero-bg.svg");
+  }
+</style>

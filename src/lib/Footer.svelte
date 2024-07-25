@@ -1,5 +1,5 @@
 <script>
-  import {arrowForwardOutline, footerBg, logoFacebook, logoFooter, logoInstagram, logoLinkedin, logoTwitter, logoYoutube} from "../assets/images";
+  import { arrowForwardOutline, footerBg, logoFooter, sosMedLogo } from "../assets/images";
 </script>
 
 <footer class="footer" style="background-image: url({footerBg})" >
@@ -96,40 +96,19 @@
 
           <button type="submit" class="btn has-before">
             <span class="span">Kirim</span>
-            <div class="ion-icon" style="mask-image: url({arrowForwardOutline});" aria-hidden="true"></div>
+              <img src={arrowForwardOutline} alt="" class="ion-icon" aria-hidden="true">
           </button>
         </form>
 
         <ul class="social-list">
+          {#each sosMedLogo as item}
           <li>
             <a href={"#"} class="social-link">
-              <div class="ion-icon" style="mask-image: url({logoFacebook});"></div>
+
+              <img src={item} alt="" class="ion-icon">
             </a>
           </li>
-          
-          <li>
-            <a href={"#"} class="social-link">
-              <div class="ion-icon" style="mask-image: url({logoLinkedin});"></div>
-            </a>
-          </li>
-          
-          <li>
-            <a href={"#"} class="social-link">
-              <div class="ion-icon" style="mask-image: url({logoInstagram});"></div>
-            </a>
-          </li>
-          
-          <li>
-            <a href={"#"} class="social-link">
-              <div class="ion-icon" style="mask-image: url({logoTwitter});"></div>
-            </a>
-          </li>
-          
-          <li>
-            <a href={"#"} class="social-link">
-              <div class="ion-icon" style="mask-image: url({logoYoutube});"></div>
-            </a>
-          </li>
+          {/each}
         </ul>
       </div>
     </div>

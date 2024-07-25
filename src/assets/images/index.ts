@@ -12,7 +12,6 @@ export { default as aboutShape4 } from "./about-shape-4.svg";
 export { default as logoNav } from "./logo-nav.png"
 export { default as logoFooter } from "./logo-footer.png"
 export { default as footerBg } from "./footer-bg.png"
-export { default as logo } from "./logo.svg"
 export { default as videoBg } from "./video-bg.png"
 export { default as videoShape1 } from "./video-shape-1.png"
 export { default as videoShape2 } from "./video-shape-2.png"
@@ -24,31 +23,33 @@ export { default as arrowForwardOutline } from "./ion-icons/arrow-forward-outlin
 export { default as checkmarkDoneOutline } from "./ion-icons/checkmark-done-outline.svg"
 export { default as chevronUp } from "./ion-icons/chevron-up.svg"
 export { default as closeOutline } from "./ion-icons/close-outline.svg"
-export { default as logoFacebook } from "./ion-icons/logo-facebook.svg"
-export { default as logoInstagram } from "./ion-icons/logo-instagram.svg"
-export { default as logoLinkedin } from "./ion-icons/logo-linkedin.svg"
-export { default as logoTwitter } from "./ion-icons/logo-twitter.svg"
-export { default as logoYoutube } from "./ion-icons/logo-youtube.svg"
 export { default as menuOutline } from "./ion-icons/menu-outline.svg"
 export { default as personAddOutline } from "./ion-icons/person-add-outline.svg"
 export { default as play } from "./ion-icons/play.svg"
 
+export const sosMedLogo: string[] = Object.values(
+  import.meta.glob("./ion-icons/logo-*.{png,jpg,jpeg,PNG,JPEG,svg}", {
+    import: 'default',
+    eager: true,
+  })
+);
+
 // Kampus images
-export const kampusImages = Object.values(
+export const kampusImages: string[] = Object.values(
   import.meta.glob("./kampus-*.{png,jpg,jpeg,PNG,JPEG,svg}", {
     import: 'default',
     eager: true,
   })
-); 
+);
 
 
 // Fasilitas images
-export const fasilitasImages = Object.values(
+export const fasilitasImages: string[] = Object.values(
   import.meta.glob("./fasilitas-*.{png,jpg,jpeg,PNG,JPEG,svg}", {
     import: 'default',
     eager: true,
   })
-); 
+);
 
 // Categories images
 export const categoriesImages = Object.values(

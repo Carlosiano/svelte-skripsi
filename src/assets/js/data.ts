@@ -67,12 +67,12 @@ const categoriesInfos = [
   ],
 ];
 
-export const categories = categoriesInfos.map((data, index) =>
+export const categories = categoriesInfos.map((data) =>
   categoriesImages.map((img, i) => ({
     img,
-    title: categoriesInfos[index][i].title,
-    desc: categoriesInfos[index][i].desc,
-    color: categoriesInfos[index][i].color,
+    title: data[i].title,
+    desc: data[i].desc,
+    color: data[i].color
   }))
 );
 

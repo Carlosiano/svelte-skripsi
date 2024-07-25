@@ -38,6 +38,10 @@
   --kappel: hsl(170, 75%, 41%);
   --white: hsl(0, 0%, 100%);
 
+  
+  --white-ion-icon: invert(96%) sepia(86%) saturate(2%) hue-rotate(160deg) brightness(110%) contrast(100%);
+
+
   /**
    * gradient color
    */
@@ -235,9 +239,12 @@ body {
   overflow: hidden;
 }
 
+.btn .ion-icon {
+  filter: var(--white-ion-icon);
+}
+
 .btn-second {
   background-color: var(--platinum);
-  color: var(--eerie-black-1);
   font-family: var(--ff-league_spartan);
   font-size: var(--fs-4);
   display: flex;
@@ -247,6 +254,7 @@ body {
   padding: 10px 20px;
   border-radius: var(--radius-5);
   overflow: hidden;
+  color: var(--eerie-black-1);
 }
 
 .has-before,
@@ -459,7 +467,9 @@ body {
   #HERO
 \*-----------------------------------*/
 
-.hero { padding-block-start: calc(var(--section-padding) + 80px); }
+.hero { 
+  padding-block-start: calc(var(--section-padding) + 80px);
+ }
 
 .hero .container {
   display: grid;
@@ -666,6 +676,7 @@ body {
 .course-card .card-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-block: 15px 8px;
@@ -772,6 +783,10 @@ body {
   animation: pulse 3s ease infinite;
 }
 
+.play-btn .ion-icon {
+  filter: var(--white-ion-icon);
+}
+
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--white_50); }
   100% { box-shadow: 0 0 0 20px transparent; }
@@ -861,6 +876,10 @@ body {
   border-radius: var(--radius-circle);
   transition: var(--transition-1);
   opacity: 0;
+}
+
+.card-btn .ion-icon {
+  filter: var(--white-ion-icon);
 }
 
 .blog-card .card-btn:is(:hover, :focus) { background-color: var(--radical-red); }
@@ -1020,7 +1039,6 @@ body {
 }
 
 .ion-icon {
-  background-color: currentColor;
   mask-repeat: no-repeat;
   mask-position: center;
   height: 1em;
