@@ -458,9 +458,3 @@
     </section>
   </article>
 </main>
-
-<style>
-  .hero {
-    background-image: url("/src/assets/images/hero-bg.svg");
-  }
-</style>
